@@ -1,0 +1,67 @@
+<mat-toolbar color="primary" class="app-toolbar">
+  <button
+    (click)="toggleMenu()"
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <img class="logo" src="assets/images/logo-white.svg" />
+  <h3 class="title">Gestão de Oficinas</h3>
+  <div class="menu-details-container">
+    <!-- Unidade -->
+    <button
+      mat-button
+      class="menu-icon menu-details"
+      aria-label="User icon-button"
+      routerLink="/change-unit"
+    >
+      <div class="button-menu-description button-unidade-menu">
+        <div class="unidade-name">
+          <span class="menu-name">Empresa</span>
+          <span class="menu-role">{{ unidade.name }}</span>
+        </div>
+        <mat-icon>sync</mat-icon>
+      </div>
+    </button>
+
+    <button
+      mat-button
+      class="menu-icon menu-details"
+      aria-label="User icon-button"
+      [matMenuTriggerFor]="userMenu"
+    >
+      <mat-icon>account_circle</mat-icon>
+      <div class="button-menu-description">
+        <span class="menu-name"></span>
+        <span class="menu-role">{{ user.role }}</span>
+      </div>
+    </button>
+  </div>
+</mat-toolbar>
+
+<mat-menu #userMenu>
+  <button mat-menu-item (click)="logout()">Sair</button>
+</mat-menu>
+
+<mat-menu #notificationsMenu>
+  <ng-container *ngFor="let notification of notifications">
+    <button mat-menu-item [routerLink]="notification.link" class="notification">
+      <div class="content">
+        <div class="notification-title">
+          {{ notification.title }}
+        </div>
+        <small class="notification-description">
+          {{ notification.description }}
+        </small>
+      </div>
+
+      <!-- TODO - Adicionar a função que precisar pra remover da lista e/ou fazer requisição para o backend marcado como lido-->
+      <button mat-icon-button color="primary" class="clear">
+        <mat-icon>clear</mat-icon>
+      </button>
+    </button>
+  </ng-container>
+</mat-menu>

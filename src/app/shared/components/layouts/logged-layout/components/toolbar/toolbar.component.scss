@@ -1,0 +1,70 @@
+mat-toolbar {
+  .logo {
+    max-height: 60%;
+  }
+  .title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 8px;
+  }
+  .menu-details-container {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+
+    .menu-details {
+      mat-icon {
+        font-size: 24px !important;
+        padding: 0;
+        width: max-content;
+        height: max-content;
+      }
+
+      .button-menu-description {
+        padding: 0 8px;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        .menu-name {
+          font-weight: bold;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .button-unidade-menu {
+    flex-direction: row !important;
+    padding: 0 !important;
+    align-items: center;
+    .unidade-name {
+      display: flex;
+      flex-direction: column;
+      margin-right: 10px;
+    }
+  }
+  .mat-badge {
+    --mat-badge-text-color: white !important;
+  }
+}
+
+::ng-deep .notification {
+  &,
+  .mat-mdc-menu-item-text {
+    width: 400px;
+  }
+
+  .mat-mdc-menu-item-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .content {
+    flex: 1 1 auto;
+  }
+
+  .clear {
+    flex: 0 1 auto;
+  }
+}

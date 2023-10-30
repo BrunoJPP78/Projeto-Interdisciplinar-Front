@@ -1,0 +1,27 @@
+<mat-form-field>
+  <mat-label>{{ label }}</mat-label>
+  <mat-select
+    [multiple]="multi"
+    [(ngModel)]="selectedOptions"
+    (ngModelChange)="optionChanged($event)"
+  >
+    <mat-select-trigger>
+      <span>{{ selectedOptionsString }}</span>
+    </mat-select-trigger>
+    <mat-option *ngIf="searchable">
+      <ngx-mat-select-search
+        noEntriesFoundLabel="Nenhum item foi encontrado com essa busca"
+        placeholderLabel="Buscar"
+        [formControl]="searchCtrl"
+      ></ngx-mat-select-search>
+    </mat-option>
+
+    <mat-option
+      *ngFor="let option of filteredOptions"
+      [value]="option[valueKey]"
+    >
+      {{ option[labelKey] }}
+    </mat-option>
+  </mat-select>
+  <ng-content select="errors"></ng-content>
+</mat-form-field>

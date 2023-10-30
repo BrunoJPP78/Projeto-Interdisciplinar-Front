@@ -1,0 +1,85 @@
+<basic-page title="{{ id ? 'Editar Dados Gerais' : 'Novo Usuário' }}">
+    <ng-container contentTitle>
+      <button mat-button color="primary" routerLink="/user">
+        Voltar
+      </button>
+      <button mat-raised-button color="primary" (click)="salvarAlteracoes()">Salvar</button>
+    </ng-container>
+  
+    <mat-tab-group padding mat-stretch-tabs="false" mat-align-tabs="start">
+    <!-- NOVA ABA -->
+      <mat-tab label="Dados Gerais">
+        <form [formGroup]="form" class="p-12">
+            <div class="grid gap-2">
+                <mat-form-field class="col">
+                  <mat-label>Login</mat-label>
+                  <input
+                    formControlName="username"
+                    matInput
+                    placeholder="Digite aqui"
+                    required
+                  />
+                </mat-form-field>
+            <mat-form-field class="col">
+              <mat-label>Nome</mat-label>
+              <input
+                formControlName="first_name"
+                matInput
+                placeholder="Digite aqui"
+                required
+              />
+            </mat-form-field>
+            <mat-form-field class="col">
+              <mat-label>Sobrenome</mat-label>
+              <input
+                formControlName="last_name"
+                matInput
+                placeholder="Digite aqui"
+                required
+              />
+            </mat-form-field>
+        </div>
+        <div class="grid gap-2">
+            <mat-form-field class="col">
+              <mat-label>CPF</mat-label>
+              <input
+                formControlName="cpf"
+                matInput
+                placeholder="Digite aqui"
+                required
+              />
+            </mat-form-field>
+            <mat-form-field class="col">
+                <mat-label>Data de Nascimento</mat-label>
+                <input
+                  type="date"
+                  formControlName="data_de_nascimento"
+                  matInput
+                  placeholder="Digite aqui"
+                  required
+                />
+            </mat-form-field>
+            <mat-form-field class="col">
+              <mat-label>Email</mat-label>
+              <input
+                formControlName="email"
+                matInput
+                placeholder="Digite aqui"
+                required
+              />
+            </mat-form-field>
+            <mat-form-field class="col">
+              <mat-label>Telefone</mat-label>
+              <input
+                formControlName="telefone"
+                matInput
+                placeholder="Digite aqui"
+                required
+              />
+            </mat-form-field>
+        </div>
+        </form>
+      </mat-tab>
+    </mat-tab-group>
+  </basic-page>
+  

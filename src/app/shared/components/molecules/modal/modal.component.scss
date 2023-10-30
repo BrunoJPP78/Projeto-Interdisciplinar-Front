@@ -1,0 +1,32 @@
+:host {
+  display: block;
+  background-color: white;
+  padding: 20px 24px;
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .title {
+      color: var(--primary-color);
+      font-size: 20px;
+      line-height: 1.2;
+      font-weight: 400;
+  }
+}
+
+.modal-content {
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px 0;
+}
+
+.modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 14px;
+}

@@ -1,0 +1,21 @@
+.content {
+    display: flex;
+    color: var(--primary-color);
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #bem_vindo {
+    margin: 0;
+    font-size: 20px;
+    line-height: 40px;
+  }
+  
+  .actions {
+    margin-left: auto;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 5px;
+    gap: 10px;
+  }
+  

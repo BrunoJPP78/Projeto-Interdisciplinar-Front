@@ -1,0 +1,16 @@
+<app-toolbar />
+
+<mat-drawer-container>
+  <mat-drawer
+    #sidenav
+    fixedInViewport="true"
+    mode="side"
+    opened
+    [ngClass]="{ opened: opened === true, clear: clear }"
+  >
+    <app-sidebar />
+  </mat-drawer>
+  <mat-drawer-content [style.margin-left.px]="!opened ? 60 : 181">
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

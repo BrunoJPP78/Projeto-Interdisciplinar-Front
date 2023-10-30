@@ -1,0 +1,32 @@
+:host {
+  width: 80%;
+}
+form,
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.mat-mdc-form-field-icon-suffix {
+  height: auto;
+}
+mat-icon {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 5px;
+  border-radius: 4px;
+  padding: 3px !important;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+mat-hint {
+  margin-top: 5px;
+  transform: translateX(-10px);
+  font-size: 12px;
+}

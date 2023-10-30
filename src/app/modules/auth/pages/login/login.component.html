@@ -1,0 +1,24 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Ex. email@gmail.com" formControlName="username" />
+    <mat-icon matSuffix>mail</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Senha</mat-label>
+    <input matInput placeholder="*****" formControlName="password"  [type]="hidePassword ? 'password' : 'text'"/>
+    <mat-icon [style]="{cursor: 'pointer'}" matSuffix (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+    <mat-hint>
+      <a routerLink="/auth/recover">
+        Esqueci minha senha
+      </a>
+    </mat-hint>
+  </mat-form-field>
+  <button id="entrar" mat-raised-button color="primary" [disabled]="form.invalid">
+    Entrar
+  </button>
+  <button mat-stroked-button routerLink="/auth/register" color="primary">
+    ou Cadastre-se
+  </button>
+</form>

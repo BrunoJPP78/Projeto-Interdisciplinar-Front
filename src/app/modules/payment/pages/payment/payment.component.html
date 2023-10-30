@@ -1,0 +1,53 @@
+<basic-page title="Pagamentos">
+    <ng-container contentTitle>
+      <button routerLink="/payment/register" mat-raised-button color="primary">Adicionar</button>
+    </ng-container>
+  
+    <ng-container advancedFilter>
+      <div [formGroup]="filterForm">
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" />
+        </mat-form-field>
+      </div>
+    </ng-container>
+  
+    <table mat-table [dataSource]="pagamentos" class="mat-elevation-z8">
+  
+      <ng-container matColumnDef="nome_funcionario">
+        <th mat-header-cell *matHeaderCellDef>Nome</th>
+        <td mat-cell *matCellDef="let element">{{ element.nome_funcionario }}</td>
+      </ng-container>
+      
+      <ng-container matColumnDef="profissao_funcionario">
+        <th mat-header-cell *matHeaderCellDef>Profissão</th>
+        <td mat-cell *matCellDef="let element">{{ element.profissao_funcionario }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="salario_funcionario">
+        <th mat-header-cell *matHeaderCellDef>Salário Integral</th>
+        <td mat-cell *matCellDef="let element">{{ element.salario_funcionario }}</td>
+      </ng-container>
+      
+      <ng-container matColumnDef="salario_descontado">
+        <th mat-header-cell *matHeaderCellDef>Salário Descontado</th>
+        <td mat-cell *matCellDef="let element">{{ element.salario_descontado }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="acoes">
+        <th mat-header-cell *matHeaderCellDef>Ações</th>
+        <td mat-cell *matCellDef="let element">
+          <a mat-icon-button color="primary" [routerLink]="element.id + '/edit'">
+            <mat-icon>edit</mat-icon>
+          </a>
+          <button mat-icon-button color="warn" (click)="deleteItem(element.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </basic-page>
+  

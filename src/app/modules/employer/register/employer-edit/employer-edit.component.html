@@ -1,0 +1,43 @@
+<basic-page title="{{ 'Editar Subconjunto' }}">
+    <ng-container contentTitle>
+      <button mat-button color="primary" routerLink="/subset">
+        Voltar
+      </button>
+      <button mat-raised-button color="primary" (click)="onSubmit()">Salvar</button>
+    </ng-container>
+  
+    <mat-tab-group padding mat-stretch-tabs="false" mat-align-tabs="start">
+  
+      <mat-tab label="Dados Gerais">
+        <form [formGroup]="dadosGeraisForm" class="p-12">
+          <div class="grid gap-2">
+            <mat-form-field class="col">
+                <mat-label>Nome</mat-label>
+                <input
+                  formControlName="nome"
+                  matInput
+                  placeholder="Digite aqui"
+                />
+              </mat-form-field>
+            <mat-form-field class="col">
+                <mat-label>Sobrenome</mat-label>
+                <input
+                  formControlName="sobrenome"
+                  matInput
+                  placeholder="Digite aqui"
+                />
+              </mat-form-field>
+            <mat-form-field class="col">
+                <mat-label>CPF</mat-label>
+                <input
+                  formControlName="cpf"
+                  matInput
+                  placeholder="Digite aqui"
+                />
+              </mat-form-field>
+          </div>
+        </form>
+      </mat-tab>
+    </mat-tab-group>
+  </basic-page>
+   

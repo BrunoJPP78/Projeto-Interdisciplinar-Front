@@ -1,0 +1,72 @@
+<basic-page title="{{ id ? 'Editar Produto' : 'Novo Produto' }}">
+    <ng-container contentTitle>
+      <button mat-button color="primary" routerLink="/stock">
+        Voltar
+      </button>
+      <button mat-raised-button color="primary" (click)="onSubmit()">Salvar</button>
+    </ng-container>
+  
+    <mat-tab-group padding mat-stretch-tabs="false" mat-align-tabs="start">
+    <!-- NOVA ABA -->
+      <mat-tab label="Dados Gerais">
+        <form [formGroup]="dadosGeraisForm" class="p-12">
+          <div class="grid gap-2">
+            <mat-form-field class="col">
+              <mat-label>Nome do Produto</mat-label>
+              <input
+                formControlName="nome"
+                matInput
+                placeholder="Digite aqui"
+                required
+              />
+            </mat-form-field>
+            <mat-form-field class="col">
+              <mat-label>Marca</mat-label>
+              <textarea
+                formControlName="marca"
+                matInput
+                placeholder="Digite aqui"
+                required
+              ></textarea>
+            </mat-form-field>
+            <mat-form-field class="col">
+                <mat-label>Modelo</mat-label>
+                <textarea
+                  formControlName="modelo"
+                  matInput
+                  placeholder="Digite aqui"
+                  required
+                ></textarea>
+            </mat-form-field>
+          </div>
+          <div class="grid gap-2">
+            <mat-form-field class="col">
+                <mat-label>Material</mat-label>
+                <textarea
+                  formControlName="material"
+                  matInput
+                  placeholder="Digite aqui"
+                ></textarea>
+            </mat-form-field>
+            <mat-form-field class="col">
+                <mat-label>Valor</mat-label>
+                <textarea
+                  formControlName="valor"
+                  matInput
+                  placeholder="Digite aqui"
+                ></textarea>
+            </mat-form-field>
+            <mat-form-field class="col">
+                <mat-label>Quantidade</mat-label>
+                <textarea
+                  formControlName="quantidade"
+                  matInput
+                  placeholder="Digite aqui"
+                ></textarea>
+            </mat-form-field>
+          </div>
+        </form>
+      </mat-tab>
+    </mat-tab-group>
+  </basic-page>
+  

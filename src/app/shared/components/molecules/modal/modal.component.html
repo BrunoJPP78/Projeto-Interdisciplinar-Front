@@ -1,0 +1,30 @@
+<div mat-dialog-title class="modal-header">
+  <span class="title">{{ title }}</span>
+
+  <button mat-icon-button color="primary" (click)="close()">
+    <mat-icon>clear</mat-icon>
+  </button>
+</div>
+
+<div mat-dialog-content class="modal-content">
+  <ng-content></ng-content>
+</div>
+
+<div mat-dialog-actions class="modal-actions">
+  <ng-container *ngIf="actions; else defaultActionstemplate">
+    <ng-container *ngTemplateOutlet="actions"></ng-container>
+  </ng-container>
+  <ng-template #defaultActionstemplate>
+    <button mat-button color="primary" (click)="close()">
+      {{ labelCancel }}
+    </button>
+    <button
+      mat-raised-button
+      (click)="confirm()"
+      [disabled]="disabled"
+      color="primary"
+    >
+      {{ labelConfirm }}
+    </button>
+  </ng-template>
+</div>

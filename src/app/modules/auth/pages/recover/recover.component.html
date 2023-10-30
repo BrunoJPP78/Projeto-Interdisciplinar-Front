@@ -1,0 +1,18 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Ex. email@gmail.com" formControlName="email" />
+    <mat-icon matSuffix>mail</mat-icon>
+  </mat-form-field>
+  <button
+    id="recuperar"
+    mat-raised-button
+    color="primary"
+    [disabled]="form.invalid"
+  >
+    Recuperar
+  </button>
+  <button mat-stroked-button routerLink="/auth/login" color="primary">
+    Voltar para Login
+  </button>
+</form>

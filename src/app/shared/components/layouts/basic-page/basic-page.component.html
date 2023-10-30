@@ -1,0 +1,22 @@
+<app-title-bar [title]="title" [advancedFilter]="advancedFilter">
+  <ng-content select="[contentTitle]"></ng-content>
+</app-title-bar>
+<mat-drawer-container hasBackdrop="false">
+  <mat-drawer
+    mode="side"
+    position="end"
+    #drawer
+    [opened]="advancedFilterOpened"
+  >
+    <advanced-filter>
+      <ng-content select="[advancedFilter]"></ng-content>
+    </advanced-filter>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="main-wrapper">
+      <main>
+        <ng-content></ng-content>
+      </main>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

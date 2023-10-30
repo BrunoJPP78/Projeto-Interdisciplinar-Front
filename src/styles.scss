@@ -1,0 +1,170 @@
+@use "@angular/material" as mat;
+
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single CSS file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Create custom colors using the specified primary, secondary, and warn colors
+$primary-color: #ff5050;
+$primary-shadow-color: #f7646435;
+$secondary-color: #00B050;
+$warn-color: #f03232;
+$success-color: #6CAA5A;
+$dark-color: #585858;
+
+// Define Material palettes with color shades for each item
+$my-primary: mat.define-palette(
+  (
+    50: mix($primary-color, #ffffff, 5%),
+    100: mix($primary-color, #ffffff, 10%),
+    200: mix($primary-color, #ffffff, 20%),
+    300: mix($primary-color, #ffffff, 30%),
+    400: mix($primary-color, #ffffff, 40%),
+    500: $primary-color,
+    600: mix($primary-color, #000000, 5%),
+    700: mix($primary-color, #000000, 10%),
+    800: mix($primary-color, #000000, 20%),
+    900: mix($primary-color, #000000, 30%),
+    A100: mix($primary-color, #ffffff, 15%),
+    A200: mix($primary-color, #ffffff, 30%),
+    A400: mix($primary-color, #ffffff, 50%),
+    A700: mix($primary-color, #000000, 70%),
+    contrast: (
+      50: #ffffff,
+      100: #ffffff,
+      200: #ffffff,
+      300: #ffffff,
+      400: #ffffff,
+      500: #ffffff,
+      600: #ffffff,
+      700: #ffffff,
+      800: #ffffff,
+      900: #ffffff,
+      A100: #ffffff,
+      A200: #ffffff,
+      A400: #ffffff,
+      A700: #ffffff,
+    ),
+  )
+);
+
+$my-accent: mat.define-palette(
+  (
+    50: mix($secondary-color, #ffffff, 5%),
+    100: mix($secondary-color, #ffffff, 10%),
+    200: mix($secondary-color, #ffffff, 20%),
+    300: mix($secondary-color, #ffffff, 30%),
+    400: mix($secondary-color, #ffffff, 40%),
+    500: $secondary-color,
+    600: mix($secondary-color, #000000, 5%),
+    700: mix($secondary-color, #000000, 10%),
+    800: mix($secondary-color, #000000, 20%),
+    900: mix($secondary-color, #000000, 30%),
+    A100: mix($secondary-color, #ffffff, 15%),
+    A200: mix($secondary-color, #ffffff, 30%),
+    A400: mix($secondary-color, #ffffff, 50%),
+    A700: mix($secondary-color, #000000, 70%),
+    contrast: (
+      50: #000000,
+      100: #000000,
+      200: #000000,
+      300: #000000,
+      400: #000000,
+      500: #000000,
+      600: #ffffff,
+      700: #ffffff,
+      800: #ffffff,
+      900: #ffffff,
+      A100: #000000,
+      A200: #000000,
+      A400: #000000,
+      A700: #ffffff,
+    ),
+  )
+);
+
+$my-warn: mat.define-palette(
+  (
+    50: mix($warn-color, #ffffff, 5%),
+    100: mix($warn-color, #ffffff, 10%),
+    200: mix($warn-color, #ffffff, 20%),
+    300: mix($warn-color, #ffffff, 30%),
+    400: mix($warn-color, #ffffff, 40%),
+    500: $warn-color,
+    600: mix($warn-color, #000000, 5%),
+    700: mix($warn-color, #000000, 10%),
+    800: mix($warn-color, #000000, 20%),
+    900: mix($warn-color, #000000, 30%),
+    A100: mix($warn-color, #ffffff, 15%),
+    A200: mix($warn-color, #ffffff, 30%),
+    A400: mix($warn-color, #ffffff, 50%),
+    A700: mix($warn-color, #000000, 70%),
+    contrast: (
+      50: #000000,
+      100: #000000,
+      200: #000000,
+      300: #ffffff,
+      400: #ffffff,
+      500: #ffffff,
+      600: #ffffff,
+      700: #ffffff,
+      800: #ffffff,
+      900: #ffffff,
+      A100: #000000,
+      A200: #000000,
+      A400: #000000,
+      A700: #ffffff,
+    ),
+  )
+);
+
+// Define your custom theme using the Material palettes
+$my-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $my-primary,
+      accent: $my-accent,
+      warn: $my-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($my-theme);
+
+:root {
+  --primary-color: #{$primary-color};
+  --primary-shadow-color: #{$primary-shadow-color};
+  --accent-color: #{$secondary-color};
+  --warn-color: #{$warn-color};
+  --success-color: #{$success-color};
+  --dark-color: #{$dark-color};
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: transparent;
+}
+
+.ngx-spinner-overlay > div {
+  color: var(--primary-color) !important;
+  filter: brightness(var(--brightness-spinner, 400%));
+}
+
+
+@import './theme.scss';

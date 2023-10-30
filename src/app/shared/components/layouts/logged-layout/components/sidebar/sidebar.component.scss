@@ -1,0 +1,110 @@
+:host {
+  width: 100%;
+}
+
+.sidebar {
+  padding: 12px !important;
+  a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+  span {
+    margin-left: 4px;
+    color: var(--primary-color);
+    font-size: 12px;
+
+    &[mat-line] {
+      line-height: 14px !important;
+    }
+  }
+  .mdc-list-item {
+    padding: 5px;
+    padding-left: 2px !important;
+    height: auto !important;
+  }
+  .mdc-list-item__content > span {
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+  }
+  .mat-expansion-panel-body {
+    padding: 5px;
+    padding-left: 2px;
+    .mat-mdc-nav-list {
+      padding-left: 5px;
+    }
+  }
+
+  .mat-expansion-indicator {
+    transform: translateY(15px);
+    margin-right: 5px;
+    &::after {
+      color: white;
+    }
+  }
+
+  .no-collapse .mat-expansion-panel-content {
+    height: 0px !important;
+  }
+
+  mat-expansion-panel-header .mat-content.mat-content-hide-toggle {
+    margin-right: 0px !important;
+  }
+  .mat-expansion-panel-header {
+    padding: 5px;
+    padding-left: 2px;
+    display: flex;
+    align-items: center;
+    height: auto !important;
+    .mat-content {
+      margin-right: 0;
+    }
+  }
+  .mat-expansion-panel-header.mat-expanded {
+    height: auto !important;
+  }
+
+  mat-list-item {
+    margin-bottom: 5px;
+  }
+
+  .active {
+    &,
+    mat-expansion-panel-header,
+    &:hover {
+      background-color: var(--primary-color) !important;
+      border-radius: 20px;
+
+      a,
+      span,
+      mat-icon {
+        color: white !important;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .active,
+  .mat-expansion-panel.mat-expanded {
+    &:is(mat-expansion-panel) {
+      &,
+      &:hover {
+        background-color: var(--primary-shadow-color) !important;
+        color: white !important;
+      }
+    }
+  }
+  .mat-icon {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mat-content {
+    align-items: center;
+  }
+}
+

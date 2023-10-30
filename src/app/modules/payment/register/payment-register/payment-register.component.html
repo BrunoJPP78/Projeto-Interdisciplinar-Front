@@ -1,0 +1,46 @@
+<basic-page title="{{ id ? 'Editar Pagamento' : 'Novo Pagamento' }}">
+    <ng-container contentTitle>
+      <button mat-button color="primary" routerLink="/payment">
+        Voltar
+      </button>
+      <button mat-raised-button color="primary" routerLink="/payment" (click)="onSubmit()">Salvar</button>
+    </ng-container>
+  
+    <mat-tab-group padding mat-stretch-tabs="false" mat-align-tabs="start">
+    <!-- NOVA ABA -->
+      <mat-tab label="Dados Gerais">
+        <form [formGroup]="dadosGeraisForm" class="p-12">
+          <div class="grid gap-2">
+            <mat-form-field class="col">
+              <mat-label>Falta</mat-label>
+              <input
+                formControlName="falta"
+                matInput
+                placeholder="Digite aqui"
+                required
+              />
+            </mat-form-field>
+            <mat-form-field class="col">
+              <mat-label>Vale</mat-label>
+              <textarea
+                formControlName="vale"
+                matInput
+                placeholder="Digite aqui"
+                required
+              ></textarea>
+            </mat-form-field>
+            <mat-form-field class="col">
+                <mat-label>Outros Descontos </mat-label>
+                <textarea
+                  formControlName="outro_desconto"
+                  matInput
+                  placeholder="Digite aqui"
+                  required
+                ></textarea>
+            </mat-form-field>
+          </div>
+        </form>
+      </mat-tab>
+    </mat-tab-group>
+  </basic-page>
+  

@@ -1,0 +1,180 @@
+<basic-page title="{{ 'Novo Usuário' }}">
+    <ng-container contentTitle>
+      <button mat-button color="primary" routerLink="/user">
+        Voltar
+      </button>
+      <button mat-raised-button color="primary" (click)="onSubmit()">Salvar</button>
+    </ng-container>
+  
+    <mat-tab-group padding mat-stretch-tabs="false" mat-align-tabs="start">
+      <mat-tab label="Dados Gerais">
+        <form [formGroup]="dadosGeraisForm" class="p-12">
+            <div class="grid gap-2">
+                <mat-form-field class="col">
+                  <mat-label>Login</mat-label>
+                  <input
+                    formControlName="username"
+                    matInput
+                    placeholder="Digite aqui"
+                    required
+                  />
+                </mat-form-field>
+            <mat-form-field class="col">
+              <mat-label>Nome</mat-label>
+              <input
+                formControlName="first_name"
+                matInput
+                placeholder="Digite aqui"
+                required
+              />
+            </mat-form-field>
+            <mat-form-field class="col">
+              <mat-label>Sobrenome</mat-label>
+              <input
+                formControlName="last_name"
+                matInput
+                placeholder="Digite aqui"
+                required
+              />
+            </mat-form-field>
+        </div>
+        <div class="grid gap-2">
+            <mat-form-field class="col">
+              <mat-label>CPF</mat-label>
+              <input
+                formControlName="cpf"
+                matInput
+                placeholder="Digite aqui"
+                required
+              />
+            </mat-form-field>
+            <mat-form-field class="col">
+                <mat-label>Data de Nascimento</mat-label>
+                <input
+                  type="date"
+                  formControlName="data_de_nascimento"
+                  matInput
+                  placeholder="Digite aqui"
+                  required
+                />
+            </mat-form-field>
+            <mat-form-field class="col">
+              <mat-label>Email</mat-label>
+              <input
+                formControlName="email"
+                matInput
+                placeholder="Digite aqui"
+                required
+              />
+            </mat-form-field>
+            <mat-form-field class="col">
+              <mat-label>Telefone</mat-label>
+              <input
+                formControlName="telefone"
+                matInput
+                placeholder="Digite aqui"
+                required
+              />
+            </mat-form-field>
+        </div>
+        <div class="grid gap-2">
+            <mat-form-field class="col">
+                <mat-label>Senha</mat-label>
+                <input
+                  formControlName="password"
+                  matInput
+                  placeholder="Digite aqui"
+                  required
+                />
+            </mat-form-field>
+            <mat-form-field class="col">
+                <mat-label>Confirmar Senha</mat-label>
+                <input
+                  formControlName="confirm_password"
+                  matInput
+                  placeholder="Digite aqui"
+                  required
+                />
+            </mat-form-field>
+          </div>
+        </form>
+      </mat-tab>
+            <!-- NOVA ABA -->
+            <!-- <mat-tab label="Contato"> -->
+                <!-- <ng-container *ngFor="let contatoForm of contatosForms; let i = index"> --> -->
+                  <!-- <form [formGroup]="contatoForm" class="p-12">
+                    <div class="grid gap-2">
+                      <mat-form-field class="col">
+                        <mat-label>Tipo de Telefone</mat-label>
+                        <mat-select formControlName="tipoTelefone">
+                          <mat-option *ngFor="let tipo of tiposTelefone" [value]="tipo">{{ tipo }}</mat-option>
+                        </mat-select>
+                      </mat-form-field>      
+                    </div>
+                    <div class="grid gap-2">
+                      <mat-form-field class="col">
+                        <mat-label>Telefone</mat-label>
+                        <input formControlName="telefone" matInput placeholder="Digite aqui" required />
+                      </mat-form-field>
+                      <mat-form-field class="col">
+                        <mat-label>E-mail</mat-label>
+                        <input formControlName="email" matInput placeholder="Ex: email@lubrin.com"/>
+                      </mat-form-field>
+                    </div>
+                  </form> -->
+                <!-- </ng-container> -->
+                <!-- <button mat-raised-button color="primary" (click)="adicionarContato()">Adicionar Contato</button> -->
+                <!-- <button mat-stroked-button color="warn" style="margin-left: 15px;" (click)="removerContato()" *ngIf="contatosForms.length > 0">Remover</button>
+              </mat-tab>
+      NOVA ABA -->
+        <mat-tab label="Atribuições">
+         <ng-container *ngFor="let atribuicaoForm of atribuicoesForms; let i = index">
+          <form [formGroup]="atribuicaoForm" class="p-12">
+            <div class="grid gap-2">
+              <mat-form-field class="col">
+                  <mat-label>Departamento</mat-label>
+                  <input formControlName="departamento" matInput placeholder="Digite aqui" required />
+                </mat-form-field>
+              <mat-form-field class="col">
+                <mat-label>Cargo</mat-label>
+                <mat-select formControlName="cargo" required>
+                  <mat-option *ngFor="let option of cargos" [value]="option[0]">
+                      {{ option[1] }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="col">
+                <mat-label>Funcao</mat-label>
+                <mat-select formControlName="funcao" required>
+                  <mat-option *ngFor="let option of funcoes" [value]="option[0]">
+                      {{ option[1] }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          <div class="grid gap-2">
+              <mat-form-field class="col">
+                <mat-label>Unidade</mat-label>
+                <mat-select formControlName="unidade" required>
+                  <mat-option *ngFor="let option of unidades" [value]="option[0]">
+                      {{ option[1] }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="col">
+                  <mat-label>Perfil</mat-label>
+                  <mat-select formControlName="perfil" required>
+                    <mat-option *ngFor="let option of perfis" [value]="option[0]">
+                        {{ option[1] }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+            </div>
+          </form>
+          </ng-container>
+          <button mat-raised-button color="primary" (click)="adicionarAtribuicao()">Adicionar Atribuição</button>                           
+          <button mat-stroked-button color="warn" style="margin-left: 15px;" (click)="removerAtribuicao()" *ngIf="atribuicoesForms.length > 0">Remover</button>
+        </mat-tab>
+    </mat-tab-group>
+  </basic-page>
+  

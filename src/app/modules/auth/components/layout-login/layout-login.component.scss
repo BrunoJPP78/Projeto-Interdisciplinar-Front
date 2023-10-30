@@ -1,0 +1,68 @@
+.auth-layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg {
+  flex: 1 1 auto;
+  height: 100% !important;
+  background-size: cover !important;
+  width: auto;
+  height: 100%;
+  position: relative;
+  align-items: center;
+  display: flex;
+  background-color: var(--primary-color);
+  background-image: url('../../../../../assets/images/bg-auth.svg');
+  .title-page {
+    width: 100%;
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -100px;
+    font-size: 60px;
+    font-weight: 500;
+
+    svg {
+      margin-right: 10px;
+      width: 70px;
+      height: 70px;
+    }
+  }
+}
+
+.content {
+  flex: 0 1 auto;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 400px;
+
+  .title {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    flex-direction: column;
+    svg {
+      margin-right: 10px;
+    }
+    &,
+    svg {
+      color: var(--primary-color);
+    }
+    span {
+      margin-top: 15px;
+      font-size: 20px;
+      color: var(--dark-color);
+      display: block;
+      text-align: center;
+    }
+  }
+}

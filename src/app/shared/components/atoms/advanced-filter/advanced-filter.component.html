@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="cabecalho">
+    <span>{{ tituloLabel }}</span>
+    <mat-icon (click)="fechar()">clear</mat-icon>
+  </div>
+
+  <div class="conteudo">
+    <ng-content></ng-content>
+  </div>
+
+  <div class="acoes">
+    <div class="acoes-filtrar">
+      <button mat-icon-button color="primary">
+        <mat-icon>refresh</mat-icon>
+      </button>
+      <button mat-raised-button color="primary">
+        {{ filtrarLabel }}
+      </button>
+    </div>
+  </div>
+</div>
