@@ -1,27 +1,22 @@
-# LubrinWeb
+<h1>PROJETO INTERDISCIPLINAR - FRONT END 📚</h1>
+<h2>Alunos: 🧑🏿‍💻</h2>
+<ul>
+  <li>Bruno José Pereira de Lima - RGM: 29073332</li>
+  <li></li>
+  <li></li>
+</ul>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
+<h2>Aplicação Desenvolvida em TypeScript com framework ANGULAR 🅰️</h2>
+<p>A aplicação é referente a um sistema de gerenciamento/administração de uma empresa. Sistemas voltado para o ramo de Oficinas Automotivas</p>
+<p>Também foi criada uma API Rest que serve para auxiliar na utilização. Link do repositório da API Rest: https://github.com/BrunoJPP78/Projeto-Interdisciplinar.git</p>
 
-## Development server
+<h2>Como iniciar a aplicação: 🍾 </h2>
+<p>Após a instalação do projeto, siga os seguintes passos: </p>
+<ul>
+  <li>Utilize o comando: <b>npm install</b> para instalar as dependências necessárias.</li>
+  <li>Inicie a aplicação com o comando: <b>ng serve</b>.</li>
+</ul>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<p>OBS: Caso tenha algum problema ao iniciar com o <b>ng serve</b>, é provável que nem todas as dependências tenham sido baixadas no primeiro comando.</p>
+<p>Então, será necessário digitar o comando específico para determinada dependência.</p>
+<p>OBS²: Não é necessário utilizar a API para entender a complexidade do projeto em si, isso é somente um adicional.</p>
