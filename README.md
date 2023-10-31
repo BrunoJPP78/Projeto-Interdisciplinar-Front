@@ -2,8 +2,8 @@
 <h2>Alunos: 🧑🏿‍💻</h2>
 <ul>
   <li>Bruno José Pereira de Lima - RGM: 29073332</li>
-  <li></li>
-  <li></li>
+  <li>Jayara Pereira da Silva - RGM: 29102146</li>
+  <li>Pedro Henrique Soares Cruz - RGM: 29289955</li>
 </ul>
 
 <h2>Aplicação Desenvolvida em TypeScript com framework ANGULAR 🅰️</h2>
